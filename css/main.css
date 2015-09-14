@@ -3,7 +3,7 @@
 
 body {
     color: #3C3C3C;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 ::selection {
@@ -25,7 +25,7 @@ html, button, input, select, textarea,
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Ostrich Sans Rounded';
+    font-family: 'Ubuntu', sans-serif;
     font-weight: normal;
     color: #3C3C3C;
 }
@@ -84,7 +84,7 @@ pre  {
 }
 .blog-title {
     text-transform: uppercase;
-    font-family: 'Ostrich Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .blog-title > a {
