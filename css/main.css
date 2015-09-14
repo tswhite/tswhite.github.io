@@ -78,27 +78,27 @@ pre  {
     color: #3C3C3C;
 }
 
-.blog-title,
+.brand-title,
 .blog-tagline {
     margin: 0;
 }
-.blog-title {
+.brand-title {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.blog-title > a {
+.brand-title > a {
     color: inherit;
     text-decoration: none;
 }
 
-.blog-title .first-name {
+.brand-title .first-name {
     font-weight: normal;
     font-size: 48px;
     margin-left: 10px;
     letter-spacing: 10px;
 }
 
-.blog-title .last-name {
+.brand-title .last-name {
     font-weight: 700;
     font-size: 79px;
 }
