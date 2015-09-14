@@ -75,6 +75,7 @@ pre  {
 
 .sidebar {
     background: #F0F1EE;
+    background: #FFFFFF;
     color: #3C3C3C;
 }
 
@@ -209,6 +210,14 @@ pre  {
 .footer .pure-menu a:focus {
     background: none;
 }
+
+
+
+
+.subtleicons {
+    color: #7c7c7c;
+}
+
 
 @media (min-width: 48em) {
     .content {
