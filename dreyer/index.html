@@ -17,28 +17,36 @@
   <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
-    .ui-button {
-  background:#3887BE;
-  color:#FFF;
-  display:block;
-  position:absolute;
-  bottom:10%;left:50%;
-  width:160px;
-  margin:-20px 0 0 -80px;
-  z-index:100;
-  text-align:center;
-  padding:10px;
-  border:1px solid rgba(0,0,0,0.4);
-  border-radius:3px;
-  }
-  .ui-button:hover {
-    background:#3074a4;
-    color:#fff;
-    }
   </style>
 
 </head>
 <body>
+
+<style>
+#geolocate {
+background: #fff;
+position: absolute;
+top: 50%;
+left: 50%;
+width: 158px;
+margin-left: -80px;
+z-index: 1000;
+font: 13px/18px;
+text-align: center;
+padding: 10px 0;
+color: #3C4E5A;
+display: block;
+border: 1px solid #BBB;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+}
+
+#geolocate:hover {
+background: #ECF5FA;
+}
+</style>
+
+
   <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>
@@ -72,47 +80,49 @@
        featureGroup.addLayer(e.layer);
      });
 
-     // This uses the HTML5 geolocation API, which is available on
-// most mobile browsers and modern browsers, but not in Internet Explorer
-//
-// See this chart of compatibility for details:
-// http://caniuse.com/#feat=geolocation
-if (!navigator.geolocation) {
-    geolocate.innerHTML = 'Geolocation is not available';
-} else {
-    geolocate.onclick = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        map.locate();
-    };
-}
+     var geolocate = document.getElementById('geolocate');
 
-// Once we've got a position, zoom and center the map
-// on it, and add a single marker.
-map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds);
+   // This uses the HTML5 geolocation API, which is available on
+   // most mobile browsers and modern browsers, but not in Internet Explorer
+   //
+   // See this chart of compatibility for details:
+   // http://caniuse.com/#feat=geolocation
+   if (!navigator.geolocation) {
+   geolocate.innerHTML = 'geolocation is not available';
+   } else {
+   geolocate.onclick = function (e) {
+   e.preventDefault();
+   e.stopPropagation();
+   map.locate();
+   };
+   }
 
-    map.markerLayer.setGeoJSON({
-    type: "Feature",
-    geometry: {
-    type: "Point",
-    coordinates: [e.latlng.lng, e.latlng.lat]
-    },
-    properties: {
-    'marker-color': '#000',
-    'marker-symbol': 'star-stroked'
-    }
-    });
+   // Once we've got a position, zoom and center the map
+   // on it, and add a single marker.
+   map.on('locationfound', function(e) {
+   map.fitBounds(e.bounds);
 
-    // And hide the geolocation button
-    geolocate.parentNode.removeChild(geolocate);
-});
+   map.markerLayer.setGeoJSON({
+   type: "Feature",
+   geometry: {
+   type: "Point",
+   coordinates: [e.latlng.lng, e.latlng.lat]
+   },
+   properties: {
+   'marker-color': '#000',
+   'marker-symbol': 'star-stroked'
+   }
+   });
 
-// If the user chooses not to allow their location
-// to be shared, display an error message.
-map.on('locationerror', function() {
-    geolocate.innerHTML = 'Position could not be found';
-});
+   // And hide the geolocation button
+   geolocate.parentNode.removeChild(geolocate);
+   });
+
+   // If the user chooses not to allow their location
+   // to be shared, display an error message.
+   map.on('locationerror', function() {
+   geolocate.innerHTML = 'position could not be found';
+   });
 
  </script>
 
