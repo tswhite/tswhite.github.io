@@ -18,7 +18,7 @@
   color:#FFF;
   display:block;
   position:absolute;
-  top:50%;left:50%;
+  bottom:10%;left:50%;
   width:160px;
   margin:-20px 0 0 -80px;
   z-index:100;
@@ -48,7 +48,7 @@ v
 
 
 var geolocate = document.getElementById('geolocate');
-ar map = L.mapbox.map('map', 'mapbox.satellite',{
+var map = L.mapbox.map('map', 'mapbox.satellite',{
   tileLayer: {
      maxNativeZoom: 19 // The map will use zoom level 19 tiles for all zoom levels past 19
  },
