@@ -47,10 +47,10 @@ background: #ECF5FA;
 </style>
 
 
-  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
+  <!-- <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css' rel='stylesheet' />
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-geodesy/v0.1.0/leaflet-geodesy.js'></script>
-  <script src="leaflet-measure.min.js"></script>
+  <script src="leaflet-measure.min.js"></script> -->
 
   <div id="map"></div>
   <a href='#' id='geolocate' class='ui-button'>Find me</a>
@@ -68,17 +68,17 @@ background: #ECF5FA;
    map.scrollWheelZoom.disable();
 
 
-   var featureGroup = L.featureGroup().addTo(map);
+  //  var featureGroup = L.featureGroup().addTo(map);
+   //
+  //  var drawControl = new L.Control.Draw({
+  //    edit: {
+  //      featureGroup: featureGroup
+  //    }
+  //  }).addTo(map);
 
-   var drawControl = new L.Control.Draw({
-     edit: {
-       featureGroup: featureGroup
-     }
-   }).addTo(map);
-
-   map.on('draw:created', function(e) {
-       featureGroup.addLayer(e.layer);
-     });
+  //  map.on('draw:created', function(e) {
+  //      featureGroup.addLayer(e.layer);
+  //    });
 
      var geolocate = document.getElementById('geolocate');
 
