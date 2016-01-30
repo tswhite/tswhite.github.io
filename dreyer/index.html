@@ -85,7 +85,7 @@ var map = L.mapbox.map('map', 'mapbox.satellite',{
      var type = e.layerType,
         layer = e.layer;
 
-    if (type === 'rectangle') {
+    if (type === 'polygon') {
         layer.on('mouseover', function() {
             alert(layer.getLatLngs());
         });
