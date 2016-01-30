@@ -22,7 +22,7 @@
   color:#FFF;
   display:block;
   position:absolute;
-  bottomg:10%;left:50%;
+  bottom:10%;left:50%;
   width:160px;
   margin:-20px 0 0 -80px;
   z-index:100;
@@ -92,17 +92,16 @@ if (!navigator.geolocation) {
 map.on('locationfound', function(e) {
     map.fitBounds(e.bounds);
 
-    myLayer.setGeoJSON({
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [e.latlng.lng, e.latlng.lat]
-        },
-        properties: {
-            'title': 'Here I am!',
-            'marker-color': '#ff8888',
-            'marker-symbol': 'star'
-        }
+    map.markerLayer.setGeoJSON({
+    type: "Feature",
+    geometry: {
+    type: "Point",
+    coordinates: [e.latlng.lng, e.latlng.lat]
+    },
+    properties: {
+    'marker-color': '#000',
+    'marker-symbol': 'star-stroked'
+    }
     });
 
     // And hide the geolocation button
