@@ -1,0 +1,68 @@
+.navbar{
+  background-color: rgba(68,50,102,.9);
+}
+
+.navbar-inverse .navbar-brand{
+  color: #efefef;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #efefef;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  background-color: rgba(247, 247, 247, .3);
+}
+
+.navbar-nav{
+  background-color:rgba(0,0,0,.5);
+}
+
+.jumbotron{
+  background-image: url('../images/Houston_Aerial_Downtown.jpg');
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  margin-top:15px;
+}
+
+.jumbotron .container{
+  background-color: rgba(247, 247, 247, .8);
+}
+
+
+h1, .h1 {
+    font-size: 36px;
+}
+
+/* Extra Small Devices, Phones */
+   @media only screen and (min-width : 480px) {
+     .navbar-nav{
+       background-color:rgba(0,0,0,.5);
+     }
+   }
+
+   /* Small Devices, Tablets */
+   @media only screen and (min-width : 768px) {
+     .navbar-nav{
+       background-color:rgba(0,0,0,0);
+     }
+     .jumbotron h1, .jumbotron .h1 {
+         font-size: 48px;
+     }
+
+   }
+
+   /* Medium Devices, Desktops */
+   @media only screen and (min-width : 992px) {
+     .navbar-nav{
+       background-color:rgba(0,0,0,0);
+     }
+   }
+
+   /* Large Devices, Wide Screens */
+   @media only screen and (min-width : 1200px) {
+     .navbar-nav{
+       background-color:rgba(0,0,0,0);
+     }
+   }
