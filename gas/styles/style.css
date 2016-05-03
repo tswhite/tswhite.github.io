@@ -138,9 +138,9 @@ a:focus {
 
 .intro {
     display: table;
-    width: 195%;
+    width: 100%;
     height: auto;
-    padding: 100px 0;
+    padding: 2em;
     text-align: center;
     color: #fff;
     background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
@@ -288,6 +288,7 @@ section {
         height: 400px;
         margin-top: 250px;
     }
+    .intro{padding:100px 0;}
 }
 
 .btn {
